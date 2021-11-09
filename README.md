@@ -3,8 +3,8 @@
 **#instalasi**
 git clone https://github.com/ferdinandanggrisw/web-server.git
 
-# Dokumentasi
-**- Tampilkan data**
+# Dokumentasi\n
+**- Tampilkan data**\n
   GET url/{Controller}
 **- Tampilkan data by id**
   GET url/{Controller}/{id}
