@@ -30,7 +30,7 @@
     </table>
 
 <b>Contoh Response</b>
-<p>GET url/{Controller}</p>
+<p> - GET url/{Controller}</p>
 
 ```
 {
@@ -59,7 +59,7 @@
 
 
 
-<p>GET url/{Controller}/{id}</p>
+<p> - GET url/{Controller}/{id}</p>
 
 ```
 {
