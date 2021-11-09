@@ -28,3 +28,47 @@
             <td>Ubah data</td>
         </tr>
     </table>
+
+<b>Contoh Response</b>
+<p>GET url/{Controller}</p>
+
+```
+{
+    "status": true,
+    "data": [
+        {
+            "id": "1",
+            "nama": "Jasa Rajaya",
+            "nrp": "3120501030",
+            "jurusan": "Teknik Pemesinan"
+        },
+        {
+            "id": "3",
+            "nama": "Siwa Simei",
+            "nrp": "3502104023",
+            "jurusan": "Teknik Peternakan"
+        },
+        {
+            "id": "5",
+            "nama": "Budi",
+            "nrp": "3502104062",
+            "jurusan": "Teknik Pertanian"
+        }
+    ]
+```
+
+
+
+<p>GET url/{Controller}/{id}</p>
+
+```
+{
+    "status": true,
+    "data": {
+        "id": "1",
+        "nama": "Jasa Rajaya",
+        "nrp": "3120501030",
+        "jurusan": "Teknik Pemesinan"
+    }
+}
+```
