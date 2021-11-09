@@ -1,16 +1,30 @@
-# web-server
-
-**#instalasi**
-git clone https://github.com/ferdinandanggrisw/web-server.git
+# web-service
 
 # Dokumentasi
-- Tampilkan data
-  GET url/{Controller}
-**- Tampilkan data by id**
-  GET url/{Controller}/{id}
-**- Tambah data**
-  POST url/{Controller}
-**- Hapus data**
-  DELETE url/{Controller}
-**- Ubah data**
-  PUT url/{Controller}
+
+<table border="1px" style="border-collapse:collapse;">
+        <tr>
+            <th>Request</th>
+            <th>Operasi dijalankan</th>
+        </tr>
+        <tr>
+            <td>GET url/{Controller}</td>
+            <td>Tampilkan seluruh data</td>
+        </tr>
+        <tr>
+            <td>GET url/{Controller}/{id}</td>
+            <td>Tampilkan data by id</td>
+        </tr>
+        <tr>
+            <td>POST url/{Controller}</td>
+            <td>Tambah data baru</td>
+        </tr>
+        <tr>
+            <td>DELETE url/{Controller}</td>
+            <td>Hapus data</td>
+        </tr>
+        <tr>
+            <td>PUT url/{Controller}</td>
+            <td>Ubah data</td>
+        </tr>
+    </table>
