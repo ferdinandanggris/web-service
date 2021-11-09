@@ -12,9 +12,17 @@ class Api
         $url = $this->parseUrl();
         $request = $this->method();
         if (isset($url[0])) {
-            if (file_exists('../api/Controllers/Mahasiswa.php')) {
+            if (file_exists('../api/Controllers/' . $url[0] . '.php')) {
                 $this->controller = $url[0];
                 unset($this->url[0]);
+            } else {
+                response(
+                    [
+                        'status' => false,
+                        'message' => "Path Controller not found"
+                    ],
+                    500
+                );
             }
         }
 

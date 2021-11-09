@@ -53,7 +53,7 @@ class Mahasiswa extends Controller
                         "status" => true,
                         "id" => $data["id"], "message" => "Data Berhasil dihapus"
                     ],
-                    200
+                    204
                 );
             } else {
                 response([
