@@ -6,8 +6,8 @@ class Database
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $charset = "utf8mb4";
-    private $dbh;
-    private $stmt;
+    public $dbh;
+    public $stmt;
 
     public function __construct()
     {

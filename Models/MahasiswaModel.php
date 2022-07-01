@@ -12,20 +12,20 @@ class MahasiswaModel
 
     public function getAllMahasiswa()
     {
-        $this->db->query('SELECT * FROM Mahasiswa');
+        $this->db->query('SELECT * FROM `' . $this->tabel . '`');
         return $this->db->resultSet();
     }
 
     public function getMahasiswaById($id)
     {
-        $this->db->query('SELECT * FROM Mahasiswa WHERE id=:id');
+        $this->db->query('SELECT * FROM `' . $this->tabel . '` WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
     public function deleteMahasiswa($id)
     {
-        $this->db->query("DELETE FROM Mahasiswa WHERE id=:id");
+        $this->db->query("DELETE FROM `" . $this->tabel . "` WHERE id=:id");
         $this->db->bind('id', $id);
         $this->db->execute();
         return $this->db->rowCount();
@@ -38,9 +38,9 @@ class MahasiswaModel
             return -1;
         }
 
-        $query = "INSERT INTO Mahasiswa
+        $query = "INSERT INTO `" . $this->tabel . "`
                     VALUES 
-                    (null,:nama,:nrp,:jurusan)";
+                    (NULL,:nama,:nrp,:jurusan)";
 
         $this->db->query($query);
         $this->db->bind('nama', $data["nama"]);
@@ -57,7 +57,7 @@ class MahasiswaModel
             return -1;
         }
 
-        $query = "UPDATE Mahasiswa SET
+        $query = "UPDATE `" . $this->tabel . "` SET
                     nama=:nama,
                     nrp=:nrp,
                     jurusan=:jurusan
