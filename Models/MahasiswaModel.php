@@ -38,7 +38,7 @@ class MahasiswaModel
             return -1;
         }
 
-        $query = "INSERT INTO Mahasiswa 
+        $query = "INSERT INTO Mahasiswa
                     VALUES 
                     (null,:nama,:nrp,:jurusan)";
 
@@ -47,6 +47,7 @@ class MahasiswaModel
         $this->db->bind('nrp', $data["nrp"]);
         $this->db->bind('jurusan', $data["jurusan"]);
         $this->db->execute();
+
         return $this->db->rowCount();
     }
 

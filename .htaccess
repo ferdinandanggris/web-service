@@ -5,5 +5,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 
-RewriteRule ^([^\.]+)/([0-9]+)$ server.php?url=$1&id=$2 [NC,L]
-RewriteRule ^([^\.]+)$ server.php?url=$1 [L]
+RewriteRule ^([^\.]+)/([0-9]+)$ index.php?url=$1&id=$2 [NC,L]
+RewriteRule ^([^\.]+)$ index.php?url=$1 [L]

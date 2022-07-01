@@ -5,7 +5,9 @@ class Mahasiswa extends Controller
     public function index_get($data)
     {
         if (empty($data["id"])) {
+
             $mahasiswa = $this->model('MahasiswaModel')->getAllMahasiswa();
+
             response(
                 [
                     "status" => true,
@@ -53,13 +55,13 @@ class Mahasiswa extends Controller
                         "status" => true,
                         "id" => $data["id"], "message" => "Data Berhasil dihapus"
                     ],
-                    204
+                    202
                 );
             } else {
                 response([
                     "status" => false,
                     "message" => "id tidak ditemukan!"
-                ], 400);
+                ], 404);
             }
         }
     }

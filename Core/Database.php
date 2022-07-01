@@ -1,22 +1,21 @@
 <?php
-
 class Database
 {
     private $host = DB_HOST;
     private $db_name = DB_NAME;
     private $user = DB_USER;
     private $pass = DB_PASS;
-
+    private $charset = "utf8mb4";
     private $dbh;
     private $stmt;
 
     public function __construct()
     {
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
-
+        $dsn = 'mysql:host=' . "$this->host" . ';dbname=' . $this->db_name . ";charset=" . $this->charset;
         $option = [
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
         ];
 
         try {

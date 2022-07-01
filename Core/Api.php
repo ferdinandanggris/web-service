@@ -1,5 +1,7 @@
 <?php
 
+
+
 class Api
 {
     protected $controller = "";
@@ -11,8 +13,9 @@ class Api
     {
         $url = $this->parseUrl();
         $request = $this->method();
+
         if (isset($url[0])) {
-            if (file_exists('../api/Controllers/' . $url[0] . '.php')) {
+            if (file_exists(__DIR__ . '/../Controllers/' . $url[0] . '.php')) {
                 $this->controller = $url[0];
                 unset($this->url[0]);
             } else {
@@ -24,9 +27,11 @@ class Api
                     500
                 );
             }
+        } else {
+            $this->controller = "Mahasiswa";
         }
 
-        require_once '../api/Controllers/' . $this->controller . '.php';
+        require_once __DIR__ . '/../Controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller();
 
         if (isset($request["method"])) {
@@ -37,6 +42,7 @@ class Api
         if (isset($request["data"])) {
             $this->params = $request["data"];
         }
+
         call_user_func([$this->controller, $this->method], $this->params);
     }
 
